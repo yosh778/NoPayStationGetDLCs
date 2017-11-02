@@ -4,6 +4,7 @@
 PKG2ZIP='./pkg2zip'
 
 import os, sys
+import subprocess
 from urllib.request import urlopen
 
 DBURL='https://docs.google.com/spreadsheets/d/18PTwQP7mlwZH1smpycHsxbEwpJnT8IwFP7YZWQT7ZSs/export?format=tsv&id=18PTwQP7mlwZH1smpycHsxbEwpJnT8IwFP7YZWQT7ZSs&gid=743196745'
@@ -62,11 +63,11 @@ for idDLC, dlc in allDLCs[ curID ].items():
 	print( 'Getting "' + dlc['name'] + '"' )
 
 	print( 'Downloading DLC', end="\r" )
-	os.system( "wget " + dlc[ 'pkgURL' ] + " -O tmp.pkg -q" )
+	subprocess.check_call( [ "wget", dlc[ 'pkgURL' ], "-O", "tmp.pkg", "-q" ] )
 
 	print( 'Extracting DLC ', end="\r" )
-	os.system( PKG2ZIP + " -x tmp.pkg " + dlc[ 'zRIF' ] + " > /dev/null" )
-	os.system( "rm tmp.pkg" )
+	subprocess.check_call( [ PKG2ZIP, "-x", "tmp.pkg", dlc[ 'zRIF' ] ], stdout=open(os.devnull, 'wb') )
+	os.unlink( "tmp.pkg" )
 
 
 print( '               ' )
