@@ -29,7 +29,7 @@ for line in data.splitlines():
 	items = line.split('\t')
 
 	idGame = items[0]
-	name = items[2]
+	name   = items[2]
 	pkgURL = items[3]
 	zRIF   = items[4]
 	idDLC  = items[5]
