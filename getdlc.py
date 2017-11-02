@@ -17,6 +17,10 @@ if len(sys.argv) < 2:
 curID = sys.argv[1]
 
 
+def get_script_path():
+    return os.path.dirname(os.path.realpath(sys.argv[0]))
+
+
 print( 'Parsing Database' )
 
 
@@ -69,7 +73,7 @@ for idDLC, dlc in allDLCs[ curID ].items():
 	subprocess.check_call( [ "wget", dlc[ 'pkgURL' ], "-O", "tmp.pkg", "-q" ] )
 
 	print( 'Extracting DLC ', end="\r" )
-	subprocess.check_call( [ PKG2ZIP, "-x", "tmp.pkg", zRIF ], stdout=open(os.devnull, 'wb') )
+	subprocess.check_call( [ get_script_path() + '/' + PKG2ZIP, "-x", "tmp.pkg", zRIF ], stdout=open(os.devnull, 'wb') )
 	os.unlink( "tmp.pkg" )
 
 
