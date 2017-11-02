@@ -15,4 +15,4 @@ If it does not work just compile it on your system from the official repository 
 
 ## Credits
 
-All credits to the people who made NoPayStation possible obviously !
+All credits to the people who made NoPayStation possible obviously
