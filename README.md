@@ -4,7 +4,7 @@ A python script to download all DLCs for a specific game
 
 ## Usage
 
-`./getdlc.py <GAMEID>`
+`python3 getdlc.py <GAMEID>`
 
 
 ## Credits
