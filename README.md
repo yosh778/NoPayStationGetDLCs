@@ -8,7 +8,9 @@ A python script to download all DLCs for a specific game
 
 ## pkg2zip binary
 
-The pkg2zip binary is a simple linux binary I got after running make, if it does not work just compile it on your system from the official repository : https://github.com/mmozeiko/pkg2zip
+This script requires a valid pkg2zip binary, the one here is a simple linux binary I got after running make.
+
+If it does not work just compile it on your system from the official repository : https://github.com/mmozeiko/pkg2zip
 
 
 ## Credits
