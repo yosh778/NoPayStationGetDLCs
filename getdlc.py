@@ -52,6 +52,9 @@ print()
 print( 'Fetching all DLCs for ' + curID )
 print()
 
+if not curID in allDLCs:
+	print( 'No result' )
+	exit()
 
 for idDLC, dlc in allDLCs[ curID ].items():
 
