@@ -16,4 +16,5 @@ If it does not work just recompile it using the official repository : https://gi
 ## Credits
 
 - mmozeiko for his nice work on pkg2zip & pkgi
+- TheRadziu for his help & work on NoPayStation
 - All people who made NoPayStation possible
