@@ -66,7 +66,7 @@ for idDLC, dlc in allDLCs[ curID ].items():
 	subprocess.check_call( [ "wget", dlc[ 'pkgURL' ], "-O", "tmp.pkg", "-q" ] )
 
 	print( 'Extracting DLC ', end="\r" )
-	subprocess.check_call( [ PKG2ZIP, "-x", "tmp.pkg", dlc[ 'zRIF' ] ], stdout=open(os.devnull, 'wb') )
+	subprocess.check_call( [ PKG2ZIP, "-x", "tmp.pkg", zRIF ], stdout=open(os.devnull, 'wb') )
 	os.unlink( "tmp.pkg" )
 
 
