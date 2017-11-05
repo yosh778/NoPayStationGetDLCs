@@ -66,6 +66,8 @@ def nameSort(item):
 
 if curID.strip() == '-l':
 
+	print()
+
 	for game in sorted(allDLCs, key=nameSort):
 
 		dlcs = allDLCs[game]
@@ -78,11 +80,14 @@ if curID.strip() == '-l':
 
 print()
 print( 'Fetching all DLCs for ' + curID )
-print()
 
 if not curID in allDLCs:
+	print()
 	print( 'No result' )
 	exit()
+
+print( str(len(allDLCs[ curID ])) + ' results' )
+print()
 
 for idDLC, dlc in allDLCs[ curID ].items():
 
