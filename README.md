@@ -5,6 +5,10 @@ A python script to download all DLCs for a specific game
 ## Usage
 
 `python3 getdlc.py <GAMEID>`
+or
+`python3 getdlc.py -l`
+to list all available games
+
 
 ## pkg2zip binary
 
