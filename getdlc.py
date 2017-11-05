@@ -7,7 +7,9 @@ import os, sys
 import subprocess
 from urllib.request import urlopen
 
-DBURL='https://docs.google.com/spreadsheets/d/18PTwQP7mlwZH1smpycHsxbEwpJnT8IwFP7YZWQT7ZSs/export?format=tsv&id=18PTwQP7mlwZH1smpycHsxbEwpJnT8IwFP7YZWQT7ZSs&gid=1180017671'
+DBURL='https://docs.google.com/spreadsheets/d/18PTwQP7mlwZH1smpycHsxbEwpJnT8IwFP7YZWQT7ZSs/export?format=tsv&id=18PTwQP7mlwZH1smpycHsxbEwpJnT8IwFP7YZWQT7ZSs&gid='
+GAMES='1180017671'
+DLCS='743196745'
 
 
 if len(sys.argv) < 2:
@@ -15,7 +17,6 @@ if len(sys.argv) < 2:
 	exit()
 
 curID = sys.argv[1]
-
 
 def get_script_path():
     return os.path.dirname(os.path.realpath(sys.argv[0]))
@@ -27,7 +28,7 @@ print( 'Parsing Database' )
 allDLCs = {}
 titles = None
 
-data = urlopen( DBURL ).read().decode('utf8')
+data = urlopen( DBURL + DLCS ).read().decode('utf8')
 
 for line in data.splitlines():
 
