@@ -95,7 +95,7 @@ for idDLC, dlc in allDLCs[ curID ].items():
 	print( 'Getting "' + dlc['name'] + '"' )
 
 	print( 'Downloading DLC', end="\r" )
-	subprocess.check_call( [ "wget", pkgURL, "-O", "tmp.pkg" ] )
+	subprocess.check_call( [ "wget", pkgURL, "-O", "tmp.pkg", '-q' ] )
 
 	print( 'Extracting DLC ', end="\r" )
 	subprocess.check_call( [ get_script_path() + '/' + PKG2ZIP, "-x", "tmp.pkg", zRIF ], stdout=open(os.devnull, 'wb') )
